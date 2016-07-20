@@ -8,7 +8,7 @@ Tutorial for newbies about Docker and Nodejs
 0. Download demo files ``git checkout tutorials/step_1``
 1. Build image ``docker build -t <your-name>/docker_nodejs_tutorial .``
 2. Check your image ``docker images``
-3. Run the image ``docker run --name myapp -d <your username>/node-web-app``
+3. Run the image ``docker run --name myapp -d <your username>/docker_nodejs_tutorial``
  - ``-d`` for detached mode, run in the background
  - ``--name`` name your running image as ``myapp``
 4. Find the container ID ``docker ps``
