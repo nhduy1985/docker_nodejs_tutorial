@@ -13,4 +13,9 @@ COPY app /usr/src/app/
 # Run the server
 CMD echo "Hello Docker with Node version" $(node -v)
 CMD echo "Server starting.... Started."
-CMD node /usr/src/app/server.js
+
+# Install packages (express)
+RUN npm install
+
+# Run the script `start` in package.json
+CMD [ "npm", "start" ]
