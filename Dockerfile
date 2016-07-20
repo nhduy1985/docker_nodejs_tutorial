@@ -1,4 +1,16 @@
 FROM node:argon
 
-# Run the first command
+#Setup environment
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+#Open port
+EXPOSE 8080
+
+#Copy source files to container
+COPY app /usr/src/app/
+
+# Run the server
 CMD echo "Hello Docker with Node version" $(node -v)
+CMD echo "Server starting.... Started."
+CMD node /usr/src/app/server.js

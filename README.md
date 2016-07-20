@@ -1,23 +1,17 @@
 # docker_nodejs_tutorial
 Tutorial for newbies about Docker and Nodejs
 
-## Step 1 - "Hello Nodejs" Example
+## Step 2 - "Simple Nodejs Server"
 
 ### Todo:
 
-0. Download demo files ``git checkout tutorials/step_1``
+0. Download demo files ``git checkout tutorials/step_2``
 1. Build image ``docker build -t <your-name>/docker_nodejs_tutorial .``
-2. Check your image ``docker images``
-3. Run the image ``docker run --name myapp -d <your username>/node-web-app``
- - ``-d`` for detached mode, run in the background
- - ``--name`` name your running image as ``myapp``
-4. Find the container ID ``docker ps``
-5. Verify the output ``Hello Docker`` with ``docker logs <4-first-numbers-of-container-id>``
+2. Run the image ``docker run --name myapp2 -p 9999:8080 -d <your username>/docker_nodejs_tutorial``
+  - ``-p`` map the machine port (9999) to container port (8080)
+3. Open browser and go to ``localhost:9999``
 
 ### Exercises
 
-- [ ] Run more commands inside the container (echo, mkdir, ls...). (Suggestion: https://docs.docker.com/engine/reference/run/#/detached-vs-foreground)
-- [ ] Study more Dockerfile https://docs.docker.com/engine/reference/builder/
- - [ ] RUN
- - [ ] EXPOSE
- - [ ] COPY
+- [ ] Change the response with request's uri (ex: http://localhost:9999/?name=dustin)
+- [ ] Study more nodejs APIs at https://nodejs.org/dist/latest-v4.x/docs/api/
